@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promises Example</title>
+</head>
+
+<body>
+    <h2>Open the Console to See Promise Outputs</h2>
+    <p>Right-click → Inspect → Console</p>
+
+    <script>
+console.log("----- Promise 1: Basic Resolve / Reject -----");
+
+const promise1 = new Promise((resolve, reject) => {
+    let success = true;
+    success ? resolve("Promise 1 resolved") : reject("Promise 1 rejected");
+});
+
+promise1
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+
+console.log("----- Promise 2: Asynchronous Promise -----");
+
+const promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let marks = 80;
+        marks >= 50 ? resolve("Promise 2: Pass") : reject("Promise 2: Fail");
+    }, 1000);
+});
+
+promise2
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+
+console.log("----- Promise 3: Promise Chaining -----");
+
+const promise3 = new Promise((resolve, reject) => {
+    let value = 10;
+    value > 0 ? resolve(value) : reject("invalid value");
+});
+
+promise3
+    .then(num => num * 2)
+    .then(num => num + 5)
+    .then(result => console.log("Promise 3 result:", result))
+    .catch(error => console.log("Error:", error));
+
+
+console.log("----- Promise 4: Promise.all -----");
+
+const p1 = Promise.resolve(5);
+const p2 = Promise.resolve(10);
+const p3 = Promise.resolve(15);
+
+Promise.all([p1, p2, p3])
+    .then(values => console.log(values))
+    .catch(error => console.log(error));
+
+console.log("----- Promise 5: Promise.any -----");
+
+const p4 = Promise.reject("Error in p1");
+const p5 = Promise.resolve("Success from p2");
+const p6 = Promise.reject("Error in p3");
+
+Promise.any([p4, p5, p6])
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+
+console.log("----- Promise 6: Using await and async -----");
+
+function getResult() {
+    return new Promise((resolve, reject) => {
+        let marks = 70;
+        marks >= 50 ? resolve("Pass") : reject("Fail");
+    });
+}
+
+async function showResult() {
+    try {
+        const result = await getResult();
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+showResult();
+
+    </script>
+</body>
+</html>

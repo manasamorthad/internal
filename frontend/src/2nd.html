@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let roll = document.getElementById("roll").value.trim();
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^[0-9]{10}$/;
+
+            // CBIT Roll number format: 1601 + 2 digits + 3 digits + 3 digits
+            let rollPattern = /^1601[0-9]{2}[0-9]{3}[0-9]{3}$/;
+
+            if (name === "") {
+                alert("Name is required");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Enter a valid email");
+                return false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                alert("Phone must be a 10-digit number");
+                return false;
+            }
+
+            if (!rollPattern.test(roll)) {
+                alert("Roll number must follow CBIT format: 1601 + YY + CourseCode + UniqueID");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Student Form</h2>
+
+    <form onsubmit="return validateForm()">
+        Name:<br>
+        <input type="text" id="name"><br><br>
+
+        Email:<br>
+        <input type="text" id="email"><br><br>
+
+        Phone:<br>
+        <input type="text" id="phone"><br><br>
+
+        Roll No:<br>
+        <input type="text" id="roll"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

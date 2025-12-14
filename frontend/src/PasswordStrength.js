@@ -24,7 +24,7 @@ function PasswordStrength(){
         setColor("green")
         setStrength("Strong")
     }
-    
+     
     };
     return(
         <div style={{textAlign:"center",marginTop:"40px"}}>
@@ -40,7 +40,7 @@ function PasswordStrength(){
                 width:"200px",
                 outline:"none"
 
-            }}
+            }} 
             />
             <p>{strength && `strength:${strength}`}</p>
             

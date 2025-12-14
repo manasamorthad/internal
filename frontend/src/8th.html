@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Sort</title>
+</head>
+<body>
+
+    <h2>Check Console for Sort Results</h2>
+
+    <script>
+        let numbers = [45, 12, 89, 3, 67, 22];
+
+        console.log("Original Array:", numbers);
+
+        // Ascending Sort (Small → Big)
+        let asc = [...numbers].sort((a, b) => a - b);
+        console.log("Ascending Order:", asc);
+
+        // Descending Sort (Big → Small)
+        let desc = [...numbers].sort((a, b) => b - a);
+        console.log("Descending Order:", desc);
+    </script>
+
+</body>
+</html>

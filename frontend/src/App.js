@@ -8,21 +8,36 @@ import Calc4 from "./Calc4"
 import { Provider } from "react-redux";
 import { store } from "./store";
 import Students from "./Students";
-import ProductApp from "./ProductApp"
+import PasswordStrength from "./PasswordStrength"
+import Calculator from './Calculator'
+import StudentTeacher from "./StudentTeacher";
+import Counter from './Counter'
+// import ProductApp from "./ProductApp"
+import AuthDemo from './AuthDemo';
+import HelloAPI from "./HelloAPI";
+import JWT from './JWT'
 function App() {
   return (
     <div>
       {/* <Page /> */}
+      {/* <Counter/> */}
+      {/* <StudentTeacher /> */}
+      {/* <Calculator/> */}
       {/* <LoginForm/> */}
       {/* <RegisterPage/> */}
       {/* <PasswordCheck/> */}
       {/* return <ServerStatus/> */}
       {/* <Greet/> */}
       {/* <Calc4/> */}
-      {/* <Provider store={store}>
-      <Students />
-    </Provider> */}
-    <ProductApp/>
+      {/*<Provider store={store}>
+      
+        <Students />
+    </Provider>*/}
+    {/* <ProductApp/> */}
+    {/* <PasswordStrength/> */}
+    <AuthDemo/>
+    {/* <HelloAPI/> */}
+    {/* <JWT/> */}
     </div>
   );
 }

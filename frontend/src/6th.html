@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Users Offline</title>
+</head>
+<body>
+<script>
+console.log("Fetching users from local file...");
+
+fetch("users.json")
+    .then(response => response.json())
+    .then(users => {
+        console.log("User Names:");
+        users.forEach(user => {
+            console.log(user.name);
+        });
+    })
+    .catch(error => console.log("Error:", error));
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Program</title>
+
+    <script>
+        function findFactorial() {
+            let num = document.getElementById("num").value;
+            num = Number(num);
+
+            if (isNaN(num) || num < 0) {
+                document.getElementById("result").innerHTML = 
+                    "Please enter a valid non-negative number.";
+                return;
+            }
+
+            let fact = 1;
+
+            for (let i = 1; i <= num; i++) {
+                fact = fact * i;
+            }
+
+            document.getElementById("result").innerHTML = 
+                "Factorial of " + num + " is: " + fact;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Find Factorial of a Number</h2>
+
+    Enter a number: 
+    <input type="text" id="num">
+    <button onclick="findFactorial()">Find Factorial</button>
+
+    <p id="result" style="font-weight:bold;"></p>
+
+</body>
+</html>

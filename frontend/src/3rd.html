@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square Using Arrow Function</title>
+
+    <script>
+        const findSquare = () => {
+            let num = Number(document.getElementById("numInput").value);
+
+            if (isNaN(num)) {
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+                return;
+            }
+
+            document.getElementById("result").innerHTML =
+                "The square of " + num + " is: " + (num * num);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Square Using Arrow Function Only</h2>
+
+    <input type="text" id="numInput">
+    <button onclick="findSquare()">Calculate</button>
+
+    <p id="result"></p>
+</body>
+</html>
